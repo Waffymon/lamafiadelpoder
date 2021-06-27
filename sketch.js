@@ -20,6 +20,7 @@ var experimento5;
 var atril;
 var bandaPresidencial;
 var peniabebe;
+var INE=0
 
 function preload() {
  backgrond=loadImage("sprites/bg.png");
@@ -65,9 +66,18 @@ function draw(){
   experimento3.display();
   experimento4.display();
   experimento5.display();
+  experimento0.conteo_de_votos();
+  experimento1.conteo_de_votos();
+  experimento2.conteo_de_votos();
+  experimento3.conteo_de_votos();
+  experimento4.conteo_de_votos();
+  experimento5.conteo_de_votos();
   atril.display();
   bandaPresidencial.display();
   peniabebe.display();
+  textSize(32)
+  text("Votos de la alianza "+INE,100,50 );
+
 }
 function mouseDragged(){
   Matter.Body.setPosition(peniabebe.body,{
