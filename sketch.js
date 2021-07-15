@@ -21,9 +21,10 @@ var atril;
 var bandaPresidencial;
 var peniabebe;
 var INE=0
+var bg="sprites/bg.png"
 
 function preload() {
- backgrond=loadImage("sprites/bg.png");
+  noche();
 }
 
 function setup(){
@@ -46,7 +47,9 @@ function setup(){
   peniabebe= new PartidoVerde(100,50);
   bandaPresidencial= new BandaPresidencial(peniabebe.body,{
     x:120,y:325
-  });
+    
+  })   ;
+  
   
   
 }
@@ -94,4 +97,15 @@ function keyPressed(){
     bandaPresidencial.boomerang(
     peniabebe.body)
   }
+}
+function noche(){
+  var fecha=new Date();
+  var hora=fecha.getHours();
+  console.log(hora)
+  if(hora>=06&&hora<19){
+    bg="sprites/bg.png"
+  }else{
+    bg="sprites/bg2.jpg"
+  }
+backgrond=loadImage(bg)
 }
